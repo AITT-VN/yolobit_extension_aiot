@@ -1,4 +1,4 @@
-const ColorBlock = '#00C1FF';
+const ColorBlock = '#44cbc6';
 
 // IR Receiver
 Blockly.Blocks["aiot_ir_recv"] = {
