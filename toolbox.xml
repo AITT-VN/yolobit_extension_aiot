@@ -1,10 +1,5 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
   <category name="AIOT KIT" colour="#44cbc6" icon="share-alt">
-    <block type="aiot_ir_on_receive"/>
-    <block type="aiot_ir_remote_btn"/>
-    <block type="aiot_ir_recv"/>
-    <block type="aiot_ir_clear"/>
-
     <block type="aiot_dht_measure"/>
     <block type="aiot_dht_read"/>
 
@@ -63,6 +58,11 @@
         </shadow>
       </value>
     </block>
+
+    <block type="aiot_ir_on_receive"/>
+    <block type="aiot_ir_remote_btn"/>
+    <block type="aiot_ir_recv"/>
+    <block type="aiot_ir_clear"/>
     
   </category>
 </xml>
