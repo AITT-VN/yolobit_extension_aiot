@@ -2,6 +2,7 @@ const ColorBlock = '#44cbc6';
 const ImgUrl = 'https://ohstem-public.s3.ap-southeast-1.amazonaws.com/extensions/AITT-VN/yolobit_extension_aiot/images/';
 
 // IR Receiver
+
 Blockly.Blocks["aiot_ir_recv"] = {
   init: function () {
     this.jsonInit({
@@ -362,7 +363,7 @@ Blockly.Blocks["aiot_ir_remote_btn"] = {
             ["F", "F"],
             [
               {
-                "src": ImgUrl + '/forward.svg',
+                "src": ImgUrl + 'forward.svg',
                 "width": 15,
                 "height": 15,
                 "alt": "*"
@@ -435,7 +436,7 @@ Blockly.Python["aiot_ir_remote_btn"] = function (block) {
 };
 
 
-// dHT20
+// DHT20
 
 Blockly.Blocks["aiot_dht_measure"] = {
   init: function() {
@@ -658,7 +659,8 @@ Blockly.Python["aiot_lcd1602_clear"] = function (block) {
   return code;
 };
 
-// Mini fan
+// Mini Fan Module
+
 Blockly.Blocks['aiot_minifan'] = {
   /**
    * Block for waiting.
@@ -784,6 +786,8 @@ Blockly.Python['aiot_minifan'] = function(block) {
   var code = '' + dropdown_name + '.write_analog(round(translate('+value_percent+', 0, 100, 0, 1023)))\n';
   return code;
 };
+
+// Tiny LED Module
 
 Blockly.Blocks["aiot_led_tiny_set_all"] = {
   init: function () {
@@ -920,6 +924,7 @@ Blockly.Python['aiot_led_tiny_set_all'] = function(block) {
 };
 
 // Cảm biến chuyển động PIR
+
 Blockly.Blocks['aiot_detect_motion'] = {
   /**
    * Block for waiting.
@@ -1040,6 +1045,7 @@ Blockly.Python['aiot_detect_motion'] = function(block) {
 };
 
 // Cảm biến ánh sáng
+
 Blockly.Blocks['aiot_light_sensor'] = {
   init: function() {
     this.jsonInit(
@@ -1482,7 +1488,7 @@ Blockly.Blocks['aiot_dual_usb'] = {
   init: function() {
     this.jsonInit(
       {
-        "type": "aiot_dual_usb_pump",
+        "type": "aiot_dual_usb",
         "message0": "%3 bật cổng USB ở chân %1 mức (0-100) %2 %%",
         "args0": [
           {
@@ -1572,7 +1578,6 @@ Blockly.Blocks['aiot_dual_usb'] = {
             "name": "percent",
             "check": "Number"
           },
-          ,
           {
             "type": "field_image",
             "src": ImgUrl + 'dual_usb.jpg',
@@ -1602,7 +1607,7 @@ Blockly.Python['aiot_dual_usb'] = function(block) {
 };
 
 // Relay Module
-Blockly.Blocks['aiot_dual_relay'] = {
+Blockly.Blocks['aiot_relay'] = {
   /**
    * Block for waiting.
    * @this Blockly.Block
@@ -1610,7 +1615,7 @@ Blockly.Blocks['aiot_dual_relay'] = {
   init: function() {
     this.jsonInit(
       {
-        "type": "aiot_dual_usb_led",
+        "type": "aiot_relay",
         "message0": "%3 %2 relay ở chân %1",
         "args0": [
           {
@@ -1711,7 +1716,7 @@ Blockly.Blocks['aiot_dual_relay'] = {
           },
           {
             "type": "field_image",
-            "src": ImgUrl + 'dual_usb.jpg',
+            "src": ImgUrl + 'relay.png',
             "width": 20,
             "height": 20,
             "alt": "*",
@@ -1728,7 +1733,7 @@ Blockly.Blocks['aiot_dual_relay'] = {
   }
 };
 
-Blockly.Python['aiot_dual_relay'] = function(block) {
+Blockly.Python['aiot_relay'] = function(block) {
   Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
   var dropdown_name = block.getFieldValue('NAME');
   var dropdown_state = block.getFieldValue('state');
