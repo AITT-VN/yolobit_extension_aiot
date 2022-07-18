@@ -1,4 +1,5 @@
 const ColorBlock = '#44cbc6';
+const ImgUrl = 'https://ohstem-public.s3.ap-southeast-1.amazonaws.com/extensions/AITT-VN/yolobit_extension_aiot/images/';
 
 // IR Receiver
 Blockly.Blocks["aiot_ir_recv"] = {
@@ -6,7 +7,7 @@ Blockly.Blocks["aiot_ir_recv"] = {
     this.jsonInit({
       colour: ColorBlock,
       tooltip: "",
-      message0: "cảm biến IR %1 đọc được nút %2 trên remote",
+      message0: "%3 cảm biến IR %1 đọc được nút %2 trên remote",
       args0: [
         {
           "type": "field_dropdown",
@@ -141,6 +142,14 @@ Blockly.Blocks["aiot_ir_recv"] = {
             ["9", "9"],
           ],
         },
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'remote.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       output: "Boolean",
       helpUrl: "",
@@ -166,8 +175,16 @@ Blockly.Blocks["aiot_ir_clear"] = {
     this.jsonInit({
       colour: ColorBlock,
       tooltip: "",
-      message0: "xóa tín hiệu remote đã thu được",
+      message0: "%1 xóa tín hiệu remote đã thu được",
       args0: [
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'remote.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       previousStatement: null,
       nextStatement: null,
@@ -189,7 +206,7 @@ Blockly.Blocks["aiot_ir_on_receive"] = {
   init: function () {
     this.jsonInit({
       colour: ColorBlock,
-      message0: "nếu cảm biến IR %1 nhận được %2 %3 %4 từ remote",
+      message0: "%5 nếu cảm biến IR %1 nhận được %2 %3 %4 từ remote",
       args0: [
         {
           "type": "field_dropdown",
@@ -277,6 +294,14 @@ Blockly.Blocks["aiot_ir_on_receive"] = {
           type: "input_statement",
           name: "ACTION",
         },
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'remote.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       helpUrl: "",
     });
@@ -323,7 +348,7 @@ Blockly.Blocks["aiot_ir_remote_btn"] = {
     this.jsonInit({
       colour: ColorBlock,
       tooltip: "",
-      message0: "nút %1",
+      message0: "%2 nút %1",
       args0: [
         {
           type: "field_dropdown",
@@ -337,7 +362,7 @@ Blockly.Blocks["aiot_ir_remote_btn"] = {
             ["F", "F"],
             [
               {
-                "src": "https://ohstem-public.s3.ap-southeast-1.amazonaws.com/extensions/AITT-VN/yolobit_homebit_v3/images/forward.svg",
+                "src": ImgUrl + '/forward.svg',
                 "width": 15,
                 "height": 15,
                 "alt": "*"
@@ -346,7 +371,7 @@ Blockly.Blocks["aiot_ir_remote_btn"] = {
             ],
             [
               {
-                "src": "https://ohstem-public.s3.ap-southeast-1.amazonaws.com/extensions/AITT-VN/yolobit_homebit_v3/images/backward.svg",
+                "src": ImgUrl + 'backward.svg',
                 "width": 15,
                 "height": 15,
                 "alt": "*"
@@ -355,7 +380,7 @@ Blockly.Blocks["aiot_ir_remote_btn"] = {
             ],
             [
               {
-                "src": "https://ohstem-public.s3.ap-southeast-1.amazonaws.com/extensions/AITT-VN/yolobit_homebit_v3/images/turn_left.svg",
+                "src": ImgUrl + 'turn_left.svg',
                 "width": 15,
                 "height": 15,
                 "alt": "*"
@@ -364,7 +389,7 @@ Blockly.Blocks["aiot_ir_remote_btn"] = {
             ],
             [
               {
-                "src": "https://ohstem-public.s3.ap-southeast-1.amazonaws.com/extensions/AITT-VN/yolobit_homebit_v3/images/turn_right.svg",
+                "src": ImgUrl + 'turn_right.svg',
                 "width": 15,
                 "height": 15,
                 "alt": "*"
@@ -384,6 +409,14 @@ Blockly.Blocks["aiot_ir_remote_btn"] = {
             ["9", "9"],
           ],
         },
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'remote.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       output: "Boolean",
       helpUrl: "",
@@ -409,6 +442,14 @@ Blockly.Blocks["aiot_dht_measure"] = {
     this.jsonInit({
       message0: Blockly.Msg.BLOCK_AIOT_DHT_MEANSURE_MESSAGE0,
       args0: [
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'temp-humi.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       previousStatement: null,
       nextStatement: null,
@@ -443,7 +484,16 @@ Blockly.Blocks["aiot_dht_read"] = {
             [Blockly.Msg.BLOCK_AIOT_DHT_READ_MESSAGE1, "TEMP"],
             [Blockly.Msg.BLOCK_AIOT_DHT_READ_MESSAGE2, "HUMID"]
           ]
+        },
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'temp-humi.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
         }
+        
       ],
       output: null,
       colour: ColorBlock,
@@ -479,7 +529,7 @@ Blockly.Blocks["aiot_lcd1602_backlight"] = {
     this.jsonInit({
       colour: ColorBlock,
       tooltip: "",
-      message0: "%1 đèn màn hình LCD1602",
+      message0: "%2 %1 đèn màn hình LCD1602",
       args0: [
         {
           type: "field_dropdown",
@@ -489,6 +539,14 @@ Blockly.Blocks["aiot_lcd1602_backlight"] = {
             ["tắt", "off"],
           ],
         },
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'lcd.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       previousStatement: null,
       nextStatement: null,
@@ -514,7 +572,7 @@ Blockly.Blocks["aiot_lcd1602_display"] = {
     this.jsonInit({
       colour: ColorBlock,
       tooltip: "",
-      message0: "hiện lên LCD1602 %1 tại x %2 y %3 %4",
+      message0: "%5 hiện lên LCD1602 %1 tại x %2 y %3 %4",
       args0: [
         {
           type: "input_value",
@@ -537,6 +595,14 @@ Blockly.Blocks["aiot_lcd1602_display"] = {
         {
           type: "input_dummy"
         },
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'lcd.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       previousStatement: null,
       nextStatement: null,
@@ -563,8 +629,16 @@ Blockly.Blocks["aiot_lcd1602_clear"] = {
     this.jsonInit({
       colour: ColorBlock,
       tooltip: "",
-      message0: "xóa màn hình LCD1602",
+      message0: "%1 xóa màn hình LCD1602",
       args0: [
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'lcd.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       previousStatement: null,
       nextStatement: null,
@@ -594,7 +668,7 @@ Blockly.Blocks['aiot_minifan'] = {
     this.jsonInit(
       {
         "type": "aiot_minifan",
-        "message0": "bật quạt chân %1 với tốc độ (0-100) %2 %%",
+        "message0": "%3 bật quạt chân %1 với tốc độ (0-100) %2 %%",
         "args0": [
           {
             "type": "field_dropdown",
@@ -682,6 +756,14 @@ Blockly.Blocks['aiot_minifan'] = {
             "type": "input_value",
             "name": "percent",
             "check": "Number"
+          },
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'fan.png',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
           }
         ],
         "previousStatement": null,
@@ -710,7 +792,7 @@ Blockly.Blocks["aiot_led_tiny_set_all"] = {
       colour: ColorBlock,
       nextStatement: null,
       tooltip: "",
-      message0: "LED RGB chân %1 đổi màu led %2 thành %3 %4",
+      message0: "%5 LED RGB chân %1 đổi màu led %2 thành %3 %4",
       previousStatement: null,
       args0: [
         {
@@ -808,6 +890,14 @@ Blockly.Blocks["aiot_led_tiny_set_all"] = {
         },
         { type: "input_value", name: "COLOR" },
         {type: "input_dummy"},
+        {
+          "type": "field_image",
+          "src": ImgUrl + 'rgb.png',
+          "width": 20,
+          "height": 20,
+          "alt": "*",
+          "flipRtl": false
+        }
       ],
       helpUrl: ""
     });
@@ -839,7 +929,7 @@ Blockly.Blocks['aiot_detect_motion'] = {
     this.jsonInit(
       {
         "type": "aiot_detect_motion",
-        "message0": "cảm biến PIR chân %1 phát hiện có người",
+        "message0": "%2 cảm biến PIR chân %1 phát hiện có người",
         "args0": [
           {
             "type": "field_dropdown",
@@ -923,6 +1013,14 @@ Blockly.Blocks['aiot_detect_motion'] = {
               ]
             ]
           },
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'pir.png',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
+          }
         ],
         output: "Boolean",
         "colour": ColorBlock,
@@ -947,7 +1045,7 @@ Blockly.Blocks['aiot_light_sensor'] = {
     this.jsonInit(
       {
         "type": "aiot_light_sensor",
-        "message0": "đọc cảm biến ánh sáng (%%) chân %1",
+        "message0": "%2 đọc cảm biến ánh sáng (%%) chân %1",
         "args0": [
           {
             "type": "field_dropdown",
@@ -966,6 +1064,14 @@ Blockly.Blocks['aiot_light_sensor'] = {
                 "pin2"
               ]
             ]
+          },
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'light.png',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
           }
         ],
         "output": null,
@@ -997,7 +1103,7 @@ Blockly.Blocks['aiot_ultrasonic_create'] = {
     this.jsonInit(
       {
         "type": "aiot_ultrasonic_create",
-        "message0": "khởi tạo cảm biến khoảng cách với chân trigger %1 chân echo %2",
+        "message0": "%3 khởi tạo cảm biến khoảng cách với chân trigger %1 chân echo %2",
         "args0": [
           {
             "type": "field_dropdown",
@@ -1162,6 +1268,14 @@ Blockly.Blocks['aiot_ultrasonic_create'] = {
                 "pin20"
               ]
             ]
+          },
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'ultrasonic.png',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
           }
         ],
         "previousStatement": null,
@@ -1192,7 +1306,7 @@ Blockly.Blocks['aiot_ultrasonic_read'] = {
     this.jsonInit(
       {
         "type": "aiot_ultrasonic_read",
-        "message0": "đọc cảm biến khoảng cách theo %1",
+        "message0": "%2 đọc cảm biến khoảng cách theo %1",
         "args0": [
           {
             "type": "field_dropdown",
@@ -1207,6 +1321,14 @@ Blockly.Blocks['aiot_ultrasonic_read'] = {
                 "MM"
               ]
             ]
+          },
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'ultrasonic.png',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
           }
         ],
         "output": null,
@@ -1239,7 +1361,7 @@ Blockly.Blocks['aiot_ultrasonic_checkdistance'] = {
     this.jsonInit(
       {
         "type": "aiot_ultrasonic_checkdistance",
-        "message0": "cảm biến khoảng cách đọc được < %1 %2 %3",
+        "message0": "%4 cảm biến khoảng cách đọc được < %1 %2 %3",
         "args0": [
           {
             "type": "input_dummy"
@@ -1262,6 +1384,14 @@ Blockly.Blocks['aiot_ultrasonic_checkdistance'] = {
                 "MM"
               ]
             ]
+          },
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'ultrasonic.png',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
           }
         ],
         "output": "Boolean",
@@ -1295,7 +1425,7 @@ Blockly.Blocks['aiot_soil_sensor'] = {
     this.jsonInit(
       {
         "type": "plantbit_soil_sensor",
-        "message0": "đọc độ ẩm đất (%%) %1",
+        "message0": "%2 đọc độ ẩm đất (%%) %1",
         "args0": [
           {
             "type": "field_dropdown",
@@ -1314,6 +1444,14 @@ Blockly.Blocks['aiot_soil_sensor'] = {
                 "pin2"
               ]
             ]
+          },
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'soil.png',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
           }
         ],
         "output": "Number",
@@ -1336,7 +1474,7 @@ Blockly.Python['aiot_soil_sensor'] = function(block) {
 
 // Dual USB Module
 
-Blockly.Blocks['aiot_dual_usb_pump'] = {
+Blockly.Blocks['aiot_dual_usb'] = {
   /**
    * Block for waiting.
    * @this Blockly.Block
@@ -1345,7 +1483,7 @@ Blockly.Blocks['aiot_dual_usb_pump'] = {
     this.jsonInit(
       {
         "type": "aiot_dual_usb_pump",
-        "message0": "bật máy bơm ở chân %1 với tốc độ (0-100) %2 %%",
+        "message0": "%3 bật cổng USB ở chân %1 mức (0-100) %2 %%",
         "args0": [
           {
             "type": "field_dropdown",
@@ -1433,6 +1571,15 @@ Blockly.Blocks['aiot_dual_usb_pump'] = {
             "type": "input_value",
             "name": "percent",
             "check": "Number"
+          },
+          ,
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'dual_usb.jpg',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
           }
         ],
         "previousStatement": null,
@@ -1445,7 +1592,7 @@ Blockly.Blocks['aiot_dual_usb_pump'] = {
   }
 };
 
-Blockly.Python['aiot_dual_usb_pump'] = function(block) {
+Blockly.Python['aiot_dual_usb'] = function(block) {
   Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
   var dropdown_name = block.getFieldValue('NAME');
   var value_percent = Blockly.Python.valueToCode(block, 'percent', Blockly.Python.ORDER_ATOMIC);
@@ -1454,7 +1601,8 @@ Blockly.Python['aiot_dual_usb_pump'] = function(block) {
   return code;
 };
 
-Blockly.Blocks['aiot_dual_usb_led'] = {
+// Relay Module
+Blockly.Blocks['aiot_dual_relay'] = {
   /**
    * Block for waiting.
    * @this Blockly.Block
@@ -1463,7 +1611,7 @@ Blockly.Blocks['aiot_dual_usb_led'] = {
     this.jsonInit(
       {
         "type": "aiot_dual_usb_led",
-        "message0": "bật đèn LED màu ở chân %1 với mức sáng (0-100) %2 %%",
+        "message0": "%3 %2 relay ở chân %1",
         "args0": [
           {
             "type": "field_dropdown",
@@ -1548,9 +1696,26 @@ Blockly.Blocks['aiot_dual_usb_led'] = {
             ]
           },
           {
-            "type": "input_value",
-            "name": "percent",
-            "check": "Number"
+            "type": "field_dropdown",
+            "name": "state",
+            "options": [
+              [
+                "bật",
+                "1"
+              ],
+              [
+                "tắt",
+                "0"
+              ]
+            ]
+          },
+          {
+            "type": "field_image",
+            "src": ImgUrl + 'dual_usb.jpg',
+            "width": 20,
+            "height": 20,
+            "alt": "*",
+            "flipRtl": false
           }
         ],
         "previousStatement": null,
@@ -1563,11 +1728,11 @@ Blockly.Blocks['aiot_dual_usb_led'] = {
   }
 };
 
-Blockly.Python['aiot_dual_usb_led'] = function(block) {
+Blockly.Python['aiot_dual_relay'] = function(block) {
   Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
   var dropdown_name = block.getFieldValue('NAME');
-  var value_percent = Blockly.Python.valueToCode(block, 'percent', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_state = block.getFieldValue('state');
   // TODO: Assemble Python into code variable.
-  var code = ''+dropdown_name+'.write_analog(round(translate('+value_percent+', 0, 100, 0, 1023)))\n';
+  var code = ''+dropdown_name+'.write_digital('+dropdown_state+')\n';
   return code;
 };

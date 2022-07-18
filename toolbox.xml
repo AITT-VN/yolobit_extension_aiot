@@ -43,13 +43,11 @@
       <value name="percent"><shadow type="math_number"><field name="NUM">70</field></shadow></value>
     </block>
 
-    <block type="aiot_dual_usb_pump">
+    <block type="aiot_dual_usb">
       <value name="percent"><shadow type="math_number"><field name="NUM">70</field></shadow></value>
     </block>
 
-    <block type="aiot_dual_usb_led">
-      <value name="percent"><shadow type="math_number"><field name="NUM">70</field></shadow></value>
-    </block>
+    <block type="aiot_dual_usb_led"/>
 
     <block type="aiot_led_tiny_set_all">
       <value name="COLOR">
