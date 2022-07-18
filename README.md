@@ -63,9 +63,9 @@
 </div>
 <!-- Contact -->
 
-## :handshake: Contact
+## :handshake: Thông tin liên hệ
 
-Trang WEB chính thức: [https://https://ohstem.vn/](https://https://ohstem.vn/)
+Trang WEB chính thức: [https://ohstem.vn/](/https://ohstem.vn/)
 
 Số điện thoại: [08.6666.8168](08.6666.8168)
 
