@@ -468,7 +468,7 @@ Blockly.Python["aiot_dht_measure"] = function(block) {
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
   Blockly.Python.definitions_["import_dht20"] = "from aiot_dht20 import DHT20";
-  Blockly.Python.definitions_["import_create_dht20"] = "aiot_dht20 = DHT20(SoftI2C(scl=Pin(22), sda=Pin(21)))";
+  Blockly.Python.definitions_["import_create_dht20"] = "aiot_dht20 = DHT20()";
   var code = "aiot_dht20.read_dht20()\n";
   return code;
 };
@@ -512,7 +512,7 @@ Blockly.Python["aiot_dht_read"] = function(block) {
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
   Blockly.Python.definitions_["import_dht20"] = "from aiot_dht20 import DHT20";
-  Blockly.Python.definitions_["import_create_dht20"] = "aiot_dht20 = DHT20(SoftI2C(scl=Pin(22), sda=Pin(21)))";
+  Blockly.Python.definitions_["import_create_dht20"] = "aiot_dht20 = DHT20()";
   var code = "";
   if (dropdown_data == "TEMP")
     code = "aiot_dht20.dht20_temperature()";
